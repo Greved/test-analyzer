@@ -6,10 +6,12 @@ namespace TestAnalyzer.TestStatistics
 {
     public class AssemblyStatisticsPrinter : IAssemblyStatisticsPrinter
     {
-        public void Print(AssemblyTestStatisticsByCategory assemblyTestStatistics, string filename)
+        public string Print(AssemblyTestStatisticsByCategory assemblyTestStatistics)
         {
             var formattedTestStatistics = JsonConvert.SerializeObject(assemblyTestStatistics, Formatting.Indented);
+            var filename = $"{assemblyTestStatistics.AssemblyName}.TestStatistics.json";
             File.WriteAllText(filename, formattedTestStatistics);
+            return filename;
         }
     }
 }

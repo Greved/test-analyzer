@@ -22,9 +22,8 @@ namespace TestAnalyzer
             Console.WriteLine($"Tests succesfully grouped by categories. There are {assemblyStatisticsByCategory.TestsByCategory.Count} categories");
 
             var printer = new AssemblyStatisticsPrinter();
-            var testStatisticsFilename = $"{assemblyStatisticsByCategory.AssemblyName}.TestStatistics.json";
-            printer.Print(assemblyStatisticsByCategory, testStatisticsFilename);
-            Console.WriteLine($"Test statistics succesfully saved to {testStatisticsFilename}");
+            var outputFilename = printer.Print(assemblyStatisticsByCategory);
+            Console.WriteLine($"Test statistics succesfully saved to {outputFilename}");
         }
 
         private static void Configure()

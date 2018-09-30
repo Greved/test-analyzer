@@ -4,6 +4,6 @@ namespace TestAnalyzer.TestStatistics
 {
     public interface IAssemblyStatisticsPrinter
     {
-        void Print(AssemblyTestStatisticsByCategory assemblyTestStatistics, string filename);
+        string Print(AssemblyTestStatisticsByCategory assemblyTestStatistics);
     }
 }
