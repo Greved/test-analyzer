@@ -57,6 +57,7 @@
     <Compile Include="BusinessData\BusinessDataProvider.cs" />
     <Compile Include="BusinessData\IBusinessDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\AnotherBusinessDataProcessorTests.cs" />
     <Compile Include="Tests\AnotherBusinessDataProviderTests.cs" />
     <Compile Include="Tests\BusinessDataProcessorTests.cs" />
     <Compile Include="Tests\Categories\CatsAttribute.cs" />
