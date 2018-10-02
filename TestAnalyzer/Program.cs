@@ -1,5 +1,6 @@
 ﻿using System;
 using TestAnalyzer.TestStatistics;
+using TestAnalyzer.TestStatistics.AssembliesToAnalyzeSupport;
 
 namespace TestAnalyzer
 {
@@ -13,7 +14,7 @@ namespace TestAnalyzer
             var pathToTestAssembly = pathToAssemblyProvider.Get(args); 
             Console.WriteLine($"Starting to analyze assembly {pathToTestAssembly}");
 
-            var assemblyStatisticsProvider = new AssemblyTestStatisticsProvider(new TestStatisticsItemsProvider());
+            var assemblyStatisticsProvider = new AssemblyTestStatisticsProvider(new TestStatisticsItemsProvider(), new AssembliesToAnalyzeProvider());
             var assemblyTestStatistics = assemblyStatisticsProvider.Get(pathToTestAssembly);
             Console.WriteLine($"{assemblyTestStatistics.Items?.Count} tests found");
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
 using TestAnalyzer.TestStatistics.Data;
 
 namespace TestAnalyzer.TestStatistics
@@ -24,7 +23,7 @@ namespace TestAnalyzer.TestStatistics
                 foreach (var fixtureTest in fixtureTests)
                 {
                     var testName = fixtureTest.Name;
-                    var testDescription = fixtureTest.GetCustomAttribute<DescriptionAttribute>()?.Properties?.Get(PropertyNames.Description) as string;
+                    var testDescription = fixtureTest.GetCustomAttribute<DescriptionAttribute>()?.Description;
                     var testCategories = fixtureTest.GetCustomAttributes<CategoryAttribute>().Select(x => x.Name).Concat(fixtureCategories).ToList();
                     var finalCategories = testCategories.Count == 0 ? defaultCategoriesList : testCategories;
                     var testStatisticsItem = new TestStatisticsItem
