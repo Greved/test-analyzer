@@ -15,7 +15,7 @@ namespace TestAnalyzer.TestStatistics
         {
             var testStatisticsItems = new List<TestStatisticsItem>();
 
-            foreach (var type in types.Where(x => x.IsDefined(typeof(TestFixtureAttribute), false)))
+            foreach (var type in types.Where(x => x.IsDefined(typeof(TestFixtureAttribute), true)))
             {
                 var fixtureName = type.Name;
                 var fixtureCategories = type.GetCustomAttributes<CategoryAttribute>().Select(x => x.Name).ToList();

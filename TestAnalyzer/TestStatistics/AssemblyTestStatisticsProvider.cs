@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text.RegularExpressions;
-using NUnit.Framework;
+﻿using System.Linq;
 using TestAnalyzer.TestStatistics.AssembliesToAnalyzeSupport;
 using TestAnalyzer.TestStatistics.Data;
 
